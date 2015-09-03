@@ -241,4 +241,38 @@
     \end{itemize}
 \end{slide}
 
+\section{Ramificação}
+\begin{slide}
+    \begin{itemize}
+        \item Na teoria, uma ramificação é uma sequência de \emph{commits}
+        \begin{itemize}
+            \pause
+            \item Uma linha de desenvolvimento
+        \end{itemize}
+        \pause
+        \item Na prática é um "ponteiro ambulante"
+        \begin{itemize}
+            \pause
+            \item A ramificação aponta para o \emph{commit} mais atual da linha
+                de desenvolvimento
+            \pause
+            \item A cada novo \emph{commit} acrescentado à ramificação, o
+                ponteiro é atualizado automáticamente
+        \end{itemize}
+        \pause
+        \item Comandos (iniciais) importantes
+        \begin{itemize}
+            \pause
+            \item \texttt{git branch "nova\_ramificacao"}
+            \pause
+            \item \texttt{git checkout "ramificacao"}
+            \pause
+            \item \texttt{git checkout -b "outra\_nova\_ramificacao"}
+        \end{itemize}
+        \pause
+        \item Todo repositório começa com uma ramificação inicial chamada
+            \textbf{master}
+    \end{itemize}
+\end{slide}
+
 \end{document}
