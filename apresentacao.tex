@@ -361,4 +361,31 @@
     \end{itemize}
 \end{slide}
 
+\section{Resolução de Conflitos}
+\begin{slide}
+    \begin{itemize}
+        \item Pode ocorrer de um mesmo arquivo for alterado por dois
+            \emph{commits} diferentes que serão juntados
+        \pause
+        \item O Git tentará resolver os conflitos automaticamente
+        \pause
+        \item Se não conseguir, indicará no arquivo os problemas
+        \begin{itemize}
+            \pause
+            \item \texttt{<<<<<<<}
+            \item \texttt{Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit.}
+            \item \texttt{=======}
+            \item \texttt{Nam fermentum tristique massa sit amet dictum.}
+            \item \texttt{>>>>>>>}
+        \end{itemize}
+        \pause
+        \item Basta resolver os problemas e adicionar ao índice
+        \begin{itemize}
+            \pause
+            \item Possivelmente rodar \texttt{git rebase --continue}
+        \end{itemize}
+    \end{itemize}
+\end{slide}
+
 \end{document}
