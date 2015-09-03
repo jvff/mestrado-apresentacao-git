@@ -449,4 +449,40 @@
     \end{itemize}
 \end{slide}
 
+\section{Repositórios Remotos}
+\begin{slide}
+    \begin{itemize}
+        \item Repositórios remotos podem ser referenciados
+        \pause
+        \item \emph{Commits} e ponteiros podem ser trocados entre os
+            repositórios
+        \pause
+        \item Cada ponteiro presente no repositório remoto é copiado para o
+            repositório local, prefixado com o nome do repositório
+            \begin{itemize}
+                \pause
+                \item Exemplo: \textbf{repositorio/master}
+            \end{itemize}
+        \pause
+        \item Comandos importantes
+        \begin{itemize}
+            \pause
+            \item \texttt{git clone "url"} Cria um novo repositório, copiando um
+                outro repositório
+            \pause
+            \item \texttt{git remote add "nome" "url"} Acrescenta o registro de
+                um repositório remoto
+            \pause
+            \item \texttt{git remote rm "nome"} Remove o registro de um
+                repositório remote
+            \pause
+            \item \texttt{git push "repositorio" "ponteiro"} Envia o ponteiro e
+                os \emph{commits} necessários para o repositório remoto
+            \pause
+            \item \texttt{git fetch "repositorio"} Atualiza os ponteiros locais
+                do estado dos ponteiros remotos
+        \end{itemize}
+    \end{itemize}
+\end{slide}
+
 \end{document}
