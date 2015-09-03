@@ -388,4 +388,27 @@
     \end{itemize}
 \end{slide}
 
+\section{Visualizando o Histórico}
+\begin{slide}
+    \begin{itemize}
+        \item O comando \texttt{git log} percorre todos os \emph{commits} a
+            partir do \emph{commit} atual
+        \pause
+        \item Algumas opções podem ser úteis
+        \begin{itemize}
+            \pause
+            \item \texttt{--oneline} Mostra somente o título
+            \pause
+            \item \texttt{--decorate} Mostra os "ponteiros" encontrados no
+                caminho
+            \pause
+            \item \texttt{--all} Começa a percorrer a partir de todos os
+                ponteiros, na tentativa de montar a árvore completa do histórico
+            \pause
+            \item \texttt{--graph} Desenha linhas ligando os \emph{commits} a
+                seus pais, evidenciando as ramificações e as junções
+        \end{itemize}
+    \end{itemize}
+\end{slide}
+
 \end{document}
