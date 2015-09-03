@@ -275,4 +275,36 @@
     \end{itemize}
 \end{slide}
 
+\section{Junção de Ramificações}
+\begin{slide}
+    \begin{itemize}
+        \item Uma utilidade de usar ramificações é poder juntá-las
+            posteriormente
+        \pause
+        \item A maneira mais fácil de fazer isso é usando o comando
+            \texttt{git merge outra\_ramificacao}
+        \pause
+        \item O comando cria um \emph{commit} especial
+        \pause
+        \item A diferença é que este \emph{commit} tem dois pais
+        \begin{itemize}
+            \pause
+            \item O primeiro é o \emph{commit} atual
+            \pause
+            \item O segundo é o \emph{commit} juntado
+        \end{itemize}
+        \pause
+        \item Observações
+        \begin{itemize}
+            \pause
+            \item Junta \emph{commits} ao invés de ramificações
+            \pause
+            \item A ramificação juntada não é apagada
+            \pause
+            \item A ramificação juntada pode continuar a evoluir posteriormente,
+                possivelmente necessitando que outra junção futura
+        \end{itemize}
+    \end{itemize}
+\end{slide}
+
 \end{document}
