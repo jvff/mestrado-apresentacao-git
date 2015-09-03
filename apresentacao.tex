@@ -128,4 +128,38 @@
     \end{itemize}
 \end{slide}
 
+\section{Conceitos Básicos do Git}
+\begin{slide}
+    \begin{itemize}
+        \item O Git controla um diretório contendo o repositório
+        \begin{itemize}
+            \pause
+            \item O comando \texttt{git init} cria um repositório em uma pasta
+        \end{itemize}
+        \pause
+        \item Dentro da pasta, ele cria uma pasta oculta \emph{.git}
+        \begin{itemize}
+            \pause
+            \item Cópias dos artefatos, dos registros e arquivos internos
+        \end{itemize}
+        \pause
+        \item O Git irá controlar os arquivos da pasta que são artefatos
+        \begin{itemize}
+            \pause
+            \item O arquivo \emph{.gitignore} pode ser usado para definir quais
+                arquivos não são artefatos
+            \begin{itemize}
+                \pause
+                \item Arquivos temporários
+                \pause
+                \item Arquivos gerados a partir dos artefatos
+                \pause
+                \item Arquivos locais (específicos ao computador atual)
+                \pause
+                \item Arquivos de segurança (com senhas, por exemplo)
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{slide}
+
 \end{document}
