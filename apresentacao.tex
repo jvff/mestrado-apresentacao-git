@@ -307,4 +307,36 @@
     \end{itemize}
 \end{slide}
 
+\section{Junção Sem Commit Especial}
+\begin{slide}
+    \begin{itemize}
+        \item Uma forma de juntar sem o commit especial é refazer todos os
+            \emph{commits} de uma ramificação em outra
+        \pause
+        \item Existe um comando que auxilia neste processo
+        \begin{itemize}
+            \pause
+            \item \texttt{git rebase "outra\_ramificacao"}
+        \end{itemize}
+        \pause
+        \item Refaz todos os \emph{commits} da ramificacao atual como se
+            tivessem começado após o \emph{commit} especificado
+        \pause
+        \item A junção é finalizada de forma semelhante á junção normal, porém o
+            Git detecta que não há necessidade de criar o \emph{commit} especial
+        \pause
+        \item Exemplo
+        \begin{itemize}
+            \pause
+            \item \texttt{git checkout ramificacao}
+            \pause
+            \item \texttt{git rebase master}
+            \pause
+            \item \texttt{git checkout master}
+            \pause
+            \item \texttt{git merge ramificacao}
+        \end{itemize}
+    \end{itemize}
+\end{slide}
+
 \end{document}
