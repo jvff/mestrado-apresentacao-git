@@ -2,12 +2,24 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
+\usepackage{tikz}
+
+\usetikzlibrary{calc}
+\usetikzlibrary{fit}
+\usetikzlibrary{intersections}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes}
+
+\tikzset{commit/.style={draw,circle,minimum size=7mm}}
 
 \mode<presentiation>{\usetheme{boxes}}
 
 \setbeamertemplate{footline}[frame number]
 
 \newenvironment{slide}{\begin{frame}{\insertsection}}{\end{frame}}
+\newenvironment{ctikz}%
+    {\begin{center}\begin{tikzpicture}}%
+    {\end{tikzpicture}\end{center}}
 
 \title{Introdução ao Git}
 \author{Janito Vaqueiro Ferreira Filho}
