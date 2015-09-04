@@ -433,22 +433,26 @@
         \item Para arquivos textuais, o comando \texttt{git diff} permite
             mostrar a diferenças entre versões
         \pause
-        \item Sem argumentos, mostra a diferença entre o estado atual da pasta
-            e o índice
+        \item \texttt{git diff}
+        \begin{itemize}
+            \item Sem argumentos, mostra a diferença entre o estado atual da
+                pasta e o índice
+        \end{itemize}
         \pause
-        \item \texttt{git diff --cached} Mostra a diferença entre o índice e o
-            \emph{commit} atual
+        \item \texttt{git diff --cached}
+        \begin{itemize}
+            \item Mostra a diferença entre o índice e o \emph{commit} atual
+        \end{itemize}
         \pause
-        \item \texttt{git diff commit1..commit2} Mostra a diferença entre dois
-            \emph{commits}
+        \item \texttt{git diff commit1..commit2}
+        \begin{itemize}
+            \item Mostra a diferença entre dois \emph{commits}
+        \end{itemize}
         \pause
-        \item Você pode restringir quais arquivos serão comparados colocando-os
-            depois do comendo separado por dois hífens
-            \begin{itemize}
-                \pause
-                \item \texttt{git diff commit1..commit2 -- arquivo1
-                    pasta/arquivo2}
-            \end{itemize}
+        \item \texttt{git diff commit1..commit2 -- arquivo1 pasta/arquivo2}
+        \begin{itemize}
+            \item É possível restringir quais arquivos serão comparados
+                colocando-os depois do comando e separado por dois hífens
     \end{itemize}
 \end{slide}
 
