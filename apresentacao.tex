@@ -411,12 +411,59 @@
     \begin{itemize}
         \item Uma utilidade de usar ramificações é poder juntá-las
             posteriormente
-        \pause
+    \end{itemize}
+    \begin{ctikz}
+        \node[commit,color=blue] (a1) {};
+        \node[commit,color=blue] (a2) [right=of a1] {};
+        \node[commit,color=blue] (a3) [right=of a2] {};
+        \node[commit,color=red] (b1) [below right=of a1] {};
+        \node[commit,color=red] (b2) [right=of b1] {};
+        \node[commit,color=red] (b3) [right=of b2] {};
+
+        \node (j) [above right=0.5 of b3] {?};
+
+        \draw [thick,blue,<-] (a1) -- (a2);
+        \draw [thick,blue,<-] (a2) -- (a3);
+        \draw [thick,red,<-] (a1) -- (b1);
+        \draw [thick,red,<-] (b1) -- (b2);
+        \draw [thick,red,<-] (b2) -- (b3);
+
+        \draw [dotted,->] (a3) -- (j);
+        \draw [dotted,->] (b3) -- (j);
+    \end{ctikz}
+\end{slide}
+
+\begin{slide}
+    \begin{itemize}
         \item A maneira mais fácil de fazer isso é usando o comando
         \begin{itemize}
             \pause
-            \item \texttt{git merge outra\_ramificacao}
+            \item \texttt{git merge ramificacao2}
         \end{itemize}
+        \pause
+        \begin{ctikz}
+            \node[commit,color=gray] (a1) {};
+            \node[commit,color=gray] (a2) [right=of a1] {};
+            \node[commit,color=gray] (a3) [right=of a2] {};
+            \node[commit] (aj) [right=of a3] {};
+            \node[commit,color=gray] (b1) [below right=of a1] {};
+            \node[commit,color=gray] (b2) [right=of b1] {};
+            \node[commit,color=gray] (b3) [right=of b2] {};
+
+            \draw [thick,gray,<-] (a1) -- (a2);
+            \draw [thick,gray,<-] (a2) -- (a3);
+            \draw [thick,gray,<-] (a1) -- (b1);
+            \draw [thick,gray,<-] (b1) -- (b2);
+            \draw [thick,gray,<-] (b2) -- (b3);
+
+            \draw [thick,<-] (a3) -- (aj);
+            \draw [thick,<-] (b3) -- (aj);
+
+            \draw [thick,dashed,blue,<-] (aj) -- ++(0.7,0.7)
+                node [right] {ramificação1};
+            \draw [thick,dashed,red,<-] (b3) -- ++(0.7,0.7)
+                node [right] {ramificação2};
+        \end{ctikz}
         \pause
         \item O comando cria um \emph{commit} especial
         \pause
