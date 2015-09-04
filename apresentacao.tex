@@ -309,21 +309,88 @@
     \begin{itemize}
         \item Na teoria, uma ramificação (\emph{branch}) é uma sequência de
             \emph{commits}
-        \begin{itemize}
-            \pause
-            \item Uma linha de desenvolvimento
-        \end{itemize}
-        \pause
+    \end{itemize}
+    \begin{ctikz}
+        \node[commit,color=blue] (a1) {};
+        \node[commit,color=blue] (a2) [right=of a1] {};
+        \node[commit,color=blue] (a3) [right=of a2] {};
+        \node[commit,color=blue] (a4) [right=of a3] {};
+        \node[commit,color=red] (b1) [below right=of a1] {};
+        \node[commit,color=red] (b2) [right=of b1] {};
+        \node[commit,color=red] (b3) [right=of b2] {};
+        \node[commit,color=red] (b4) [right=of b3] {};
+
+        \draw [thick,blue,<-] (a1) -- (a2);
+        \draw [thick,blue,<-] (a2) -- (a3);
+        \draw [thick,blue,<-] (a3) -- (a4);
+        \draw [thick,red,<-] (a1) -- (b1);
+        \draw [thick,red,<-] (b1) -- (b2);
+        \draw [thick,red,<-] (b2) -- (b3);
+        \draw [thick,red,<-] (b3) -- (b4);
+    \end{ctikz}
+\end{slide}
+
+\begin{slide}
+    \begin{itemize}
         \item Na prática é um "ponteiro ambulante"
-        \begin{itemize}
-            \pause
-            \item A ramificação aponta para o \emph{commit} mais atual da linha
-                de desenvolvimento
-            \pause
-            \item A cada novo \emph{commit} acrescentado à ramificação, o
-                ponteiro é atualizado automaticamente
-        \end{itemize}
         \pause
+        \begin{ctikz}
+            \node[commit] (a1) {};
+            \node[commit] (a2) [right=of a1] {};
+            \node[commit] (a3) [right=of a2] {};
+            \node[commit] (a4) [right=of a3] {};
+            \node[commit] (b1) [below right=of a1] {};
+            \node[commit] (b2) [right=of b1] {};
+            \node[commit] (b3) [right=of b2] {};
+            \node[commit] (b4) [right=of b3] {};
+
+            \draw [thick,<-] (a1) -- (a2);
+            \draw [thick,<-] (a2) -- (a3);
+            \draw [thick,<-] (a3) -- (a4);
+            \draw [thick,<-] (a1) -- (b1);
+            \draw [thick,<-] (b1) -- (b2);
+            \draw [thick,<-] (b2) -- (b3);
+            \draw [thick,<-] (b3) -- (b4);
+
+            \draw [thick,dashed,blue,<-] (a4) -- ++(0.7,0.7)
+                node [right] {ramificação1};
+            \draw [thick,dashed,red,<-] (b4) -- ++(0.7,0.7)
+                node [right] {ramificação2};
+        \end{ctikz}
+        \pause
+        \item A cada novo \emph{commit} acrescentado à ramificação, o
+            ponteiro é atualizado automaticamente
+        \pause
+        \begin{ctikz}
+            \node[commit,gray] (a1) {};
+            \node[commit,gray] (a2) [right=of a1] {};
+            \node[commit,gray] (a3) [right=of a2] {};
+            \node[commit,gray] (a4) [right=of a3] {};
+            \node[commit] (a5) [right=of a4] {};
+            \node[commit,gray] (b1) [below right=of a1] {};
+            \node[commit,gray] (b2) [right=of b1] {};
+            \node[commit,gray] (b3) [right=of b2] {};
+            \node[commit,gray] (b4) [right=of b3] {};
+
+            \draw [thick,gray,<-] (a1) -- (a2);
+            \draw [thick,gray,<-] (a2) -- (a3);
+            \draw [thick,gray,<-] (a3) -- (a4);
+            \draw [thick,<-] (a4) -- (a5);
+            \draw [thick,gray,<-] (a1) -- (b1);
+            \draw [thick,gray,<-] (b1) -- (b2);
+            \draw [thick,gray,<-] (b2) -- (b3);
+            \draw [thick,gray,<-] (b3) -- (b4);
+
+            \draw [thick,dashed,blue,<-] (a5) -- ++(0.7,0.7)
+                node [right] {ramificação1};
+            \draw [thick,dashed,red,<-] (b4) -- ++(0.7,0.7)
+                node [right] {ramificação2};
+        \end{ctikz}
+    \end{itemize}
+\end{slide}
+
+\begin{slide}
+    \begin{itemize}
         \item Comandos (iniciais) importantes
         \begin{itemize}
             \pause
