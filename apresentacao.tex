@@ -493,7 +493,31 @@
     \begin{itemize}
         \item Uma forma de juntar sem o commit especial é refazer todos os
             \emph{commits} de uma ramificação em outra
-        \pause
+    \end{itemize}
+    \begin{ctikz}
+        \node[commit,color=blue] (a1) {};
+        \node[commit,color=blue] (a2) [right=of a1] {};
+        \node[commit,color=blue] (a3) [right=of a2] {};
+        \node[commit,color=gray] (b1) [below right=of a1] {};
+        \node[commit,color=gray] (b2) [right=of b1] {};
+        \node[commit,color=gray] (b3) [right=of b2] {};
+        \node[commit,color=red] (nb1) [right=of a3] {};
+        \node[commit,color=red] (nb2) [right=of nb1] {};
+        \node[commit,color=red] (nb3) [right=of nb2] {};
+
+        \draw [thick,blue,<-] (a1) -- (a2);
+        \draw [thick,blue,<-] (a2) -- (a3);
+        \draw [thick,gray,<-] (a1) -- (b1);
+        \draw [thick,gray,<-] (b1) -- (b2);
+        \draw [thick,gray,<-] (b2) -- (b3);
+        \draw [thick,red,<-] (a3) -- (nb1);
+        \draw [thick,red,<-] (nb1) -- (nb2);
+        \draw [thick,red,<-] (nb2) -- (nb3);
+    \end{ctikz}
+\end{slide}
+
+\begin{slide}
+    \begin{itemize}
         \item Existe um comando que auxilia neste processo
         \begin{itemize}
             \pause
