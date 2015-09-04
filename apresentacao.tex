@@ -432,9 +432,13 @@
         \item \texttt{git diff commit1..commit2} Mostra a diferença entre dois
             \emph{commits}
         \pause
-        \item Se o comando terminar em \texttt{-- arquivo1 arquivo2
-            pasta/arquivo3}, somente as diferenças destes arquivos serão
-            mostradas
+        \item Você pode restringir quais arquivos serão comparados colocando-os
+            depois do comendo separado por dois hífens
+            \begin{itemize}
+                \pause
+                \item \texttt{git diff commit1..commit2 -- arquivo1
+                    pasta/arquivo2}
+            \end{itemize}
     \end{itemize}
 \end{slide}
 
