@@ -553,16 +553,40 @@
         \end{itemize}
         \pause
         \item Ele permite alterar as operações que serão realizadas
-        \begin{itemize}
-            \pause
-            \item Alterar a ordem dos \emph{commits}
-            \pause
-            \item Pular \emph{commits}
-            \pause
-            \item Re-escrever a descrição de \emph{commits}
-            \pause
-            \item Juntar dois ou mais \emph{commits} em um só
-        \end{itemize}
+    \end{itemize}
+    \begin{ctikz}
+        \node[commit,color=blue] (a1) {};
+        \node[commit,color=blue] (a2) [right=of a1] {};
+        \node[commit,color=blue] (a3) [right=of a2] {};
+        \node[commit,color=gray] (b1) [below right=of a1] {1};
+        \node[commit,color=gray] (b2) [right=of b1] {2};
+        \node[commit,color=gray] (b3) [right=of b2] {3};
+        \node[commit,color=gray] (b4) [right=of b3] {4};
+        \node[commit,color=gray] (b5) [right=of b4] {5};
+        \node[commit,color=red] (nb1) [right=of a3] {4};
+        \node[commit,color=red] (nb2) [right=of nb1] {1\&2};
+        \node[commit,color=red] (nb3) [right=of nb2] {5*};
+
+        \draw [thick,blue,<-] (a1) -- (a2);
+        \draw [thick,blue,<-] (a2) -- (a3);
+        \draw [thick,gray,<-] (a1) -- (b1);
+        \draw [thick,gray,<-] (b1) -- (b2);
+        \draw [thick,gray,<-] (b2) -- (b3);
+        \draw [thick,gray,<-] (b3) -- (b4);
+        \draw [thick,gray,<-] (b4) -- (b5);
+        \draw [thick,red,<-] (a3) -- (nb1);
+        \draw [thick,red,<-] (nb1) -- (nb2);
+        \draw [thick,red,<-] (nb2) -- (nb3);
+    \end{ctikz}
+    \begin{itemize}
+        \pause
+        \item Alterar a ordem dos \emph{commits}
+        \pause
+        \item Pular \emph{commits}
+        \pause
+        \item Re-escrever a descrição de \emph{commits}
+        \pause
+        \item Juntar dois ou mais \emph{commits} em um só
         \pause
         \item Um dos comandos mais poderosos
     \end{itemize}
