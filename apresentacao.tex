@@ -5,10 +5,13 @@
 \usepackage{tikz}
 
 \usetikzlibrary{calc}
+\usetikzlibrary{external}
 \usetikzlibrary{fit}
 \usetikzlibrary{intersections}
 \usetikzlibrary{positioning}
 \usetikzlibrary{shapes}
+
+\tikzexternalize[prefix=tikz/]
 
 \tikzset{commit/.style={draw,circle,minimum size=7mm}}
 
