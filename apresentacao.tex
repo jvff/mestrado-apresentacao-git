@@ -529,18 +529,81 @@
         \pause
         \item A junção é finalizada de forma semelhante à junção normal, porém o
             Git detecta que não há necessidade de criar o \emph{commit} especial
+    \end{itemize}
+\end{slide}
+
+\begin{slide}
+    \begin{ctikz}
+        \node[commit] (a1) {};
+        \node[commit] (a2) [right=of a1] {};
+        \node[commit] (a3) [right=of a2] {};
+        \node[commit] (b1) [below right=of a1] {};
+        \node[commit] (b2) [right=of b1] {};
+        \node[commit] (b3) [right=of b2] {};
+
+        \onslide<3->{
+            \node[commit] (nb1) [right=of a3] {};
+            \node[commit] (nb2) [right=of nb1] {};
+            \node[commit] (nb3) [right=of nb2] {};
+        }
+
+        \draw [thick,<-] (a1) -- (a2);
+        \draw [thick,<-] (a2) -- (a3);
+        \draw [thick,<-] (a1) -- (b1);
+        \draw [thick,<-] (b1) -- (b2);
+        \draw [thick,<-] (b2) -- (b3);
+
+        \onslide<3->{
+            \draw [thick,<-] (a3) -- (nb1);
+            \draw [thick,<-] (nb1) -- (nb2);
+            \draw [thick,<-] (nb2) -- (nb3);
+        }
+
+        \onslide<1>{
+            \draw [thick,dashed,<-] (a3) -- ++(1.0,0.0) node [right] {HEAD};
+        }
+        \onslide<2>{
+            \draw [thick,dashed,<-] (b3) -- ++(1.0,0.0) node [right] {HEAD};
+        }
+        \onslide<3>{
+            \draw [thick,dashed,<-] (nb3) -- ++(1.0,0.0) node [right] {HEAD};
+        }
+        \onslide<4>{
+            \draw [thick,dashed,<-] (a3) -- ++(0.7,-0.7) node [right] {HEAD};
+        }
+        \onslide<5->{
+            \draw [thick,dashed,<-] (nb3) -- ++(1.0,0.0) node [right] {HEAD};
+        }
+
+        \onslide<1-4>{
+            \draw [thick,dashed,blue,<-] (a3) -- ++(0.7,0.7)
+                node [right] {master};
+        }
+        \onslide<5->{
+            \draw [thick,dashed,blue,<-] (nb3) -- ++(0.7,0.7)
+                node [right] {master};
+        }
+
+        \onslide<1-2>{
+            \draw [thick,dashed,red,<-] (b3) -- ++(0.7,0.7)
+                node [right] {ramificacao};
+        }
+        \onslide<3-5>{
+            \draw [thick,dashed,red,<-] (nb3) -- ++(0.7,-0.7)
+                node [right] {ramificacao};
+        }
+    \end{ctikz}
+    \begin{itemize}
         \pause
-        \item Exemplo
-        \begin{itemize}
-            \pause
-            \item \texttt{git checkout ramificacao}
-            \pause
-            \item \texttt{git rebase master}
-            \pause
-            \item \texttt{git checkout master}
-            \pause
-            \item \texttt{git merge ramificacao}
-        \end{itemize}
+        \item \texttt{git checkout ramificacao}
+        \pause
+        \item \texttt{git rebase master}
+        \pause
+        \item \texttt{git checkout master}
+        \pause
+        \item \texttt{git merge ramificacao}
+        \pause
+        \item \texttt{git branch -d ramificacao}
     \end{itemize}
 \end{slide}
 
