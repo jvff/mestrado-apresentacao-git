@@ -141,6 +141,42 @@
     \end{itemize}
 \end{slide}
 
+\section{Instalação}
+\begin{slide}
+    \begin{itemize}
+        \item Linux
+        \begin{itemize}
+            \pause
+            \item Ubuntu e Debian: \texttt{sudo apt-get install git}
+            \pause
+            \item Fedora e CentOS: \texttt{sudo yum install git}
+            \pause
+            \item Outros (e UNIX): \texttt{https://git-scm.com/download/linux}
+        \end{itemize}
+        \pause
+        \item Windows
+        \begin{itemize}
+            \pause
+            \item Existem diversos programas
+            \pause
+            \item Sugestão: Git for Windows Portable
+            \begin{itemize}
+                \pause
+                \item \texttt{https://git-scm.com/download/win}
+                \pause
+                \item Mais próximo do ambiente Linux
+            \end{itemize}
+        \end{itemize}
+        \pause
+        \item Após a instalação, é preciso se identificar
+        \begin{itemize}
+            \pause
+            \item \texttt{git config --global user.name "Nome Completo"}
+            \item \texttt{git config --global user.email "email@local.com"}
+        \end{itemize}
+    \end{itemize}
+\end{slide}
+
 \section{Conceitos Básicos do Git}
 \begin{slide}
     \begin{itemize}
@@ -543,14 +579,6 @@
 \section{Considerações Finais}
 \begin{slide}
     \begin{itemize}
-        \item Para o Git saber quem colocar como autor dos \emph{commits}, é
-            preciso rodar os comandos abaixo logo após a instalação
-            \begin{itemize}
-                \pause
-                \item \texttt{git config --global user.name "Nome Completo"}
-                \item \texttt{git config --global user.email "email@local.com"}
-            \end{itemize}
-        \pause
         \item \emph{Commits} curtos e específicos são melhores
         \pause
         \item Uso de ramificações para organização depende do gosto dos usuários
